@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="menu_focused_pressed_gray_color">#404040</color>
+    <color name="blue_dark_color">#3280b8</color>
+    <color name="main_color">#1670bd</color>
+    <color name="image_back_color">#81c1f9</color>
+    <color name="call_color">#73a9d7</color>
+    <color name="sliding_menu_back_color">#f1f1f1</color>
+    <color name="white">#FFFFFF</color>
+
+
+</resources>
