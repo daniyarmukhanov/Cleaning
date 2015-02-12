@@ -1,0 +1,107 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:ignore="MergeRootFrame">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color"
+            android:layout_gravity="fill_horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/backicon"
+                android:id="@+id/back"
+                android:padding="10dp"
+                android:layout_margin="2dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="Авторизация"
+                android:textSize="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+               <EditText
+                   android:layout_width="fill_parent"
+                   android:layout_marginLeft="30dp"
+                   android:layout_marginRight="30dp"
+                   android:layout_marginTop="20dp"
+                   android:layout_marginBottom="20dp"
+                   android:layout_height="45dp"
+                   android:padding="10dp"
+                   android:hint="Электронная почта"
+                   android:background="@drawable/rounded_edit"/>
+
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_height="45dp"
+                    android:padding="10dp"
+                    android:hint="Пароль"
+                    android:inputType="textPassword"
+                    android:background="@drawable/rounded_edit"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/blue_button"
+            android:text="Войти"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:textSize="18dp"
+            android:id="@+id/register"
+            android:text="Регистрация"
+            android:gravity="center"
+            android:textColor="@color/call_color"/>
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/call"
+                android:text="Позвонить"
+                android:textColor="@color/call_color"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

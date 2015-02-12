@@ -19,20 +19,20 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/menuicon"
-                android:id="@+id/sidebar"
+                android:src="@drawable/backicon"
+                android:id="@+id/back"
                 android:padding="10dp"
                 android:layout_margin="2dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:text="Главная"
+                android:text="Выберите услугу"
                 android:textSize="16dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 />
-            </RelativeLayout>
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,64 +40,23 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="45dp"
             android:layout_marginTop="45dp"
-            android:text="Какую услугу вы хотите заказать?"
+            android:text="Клининг:"
             android:textColor="#1670bd"
             android:textSize="18dp" />
 
-        <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="0dp"
-            android:background="#1670bd"></View>
-
-        <LinearLayout
-            android:id="@+id/cleaning"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:clickable="true"
-            android:background="@drawable/list_selector">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="35dp"
-                android:background="@drawable/imageback"
-                android:padding="9dp"
-                android:src="@drawable/cleaningicon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Клининг"
-                android:layout_gravity="center_vertical"
-                android:textColor="@color/main_color"
-                android:textSize="18dp" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="0dp"
-            android:background="#1670bd"></View>
-    </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="0dp"
+                android:background="#1670bd"></View>
 
             <LinearLayout
-                android:id="@+id/plumber"
+                android:id="@+id/general"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -113,13 +72,95 @@
                     android:layout_marginLeft="35dp"
                     android:background="@drawable/imageback"
                     android:padding="9dp"
-                    android:src="@drawable/santehnicicon" />
+                    android:src="@drawable/cleangen" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Генеральная уборка"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/main_color"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="0dp"
+                android:background="#1670bd"></View>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/after"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:background="@drawable/list_selector">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="35dp"
+                    android:background="@drawable/imageback"
+                    android:padding="9dp"
+                    android:src="@drawable/cleandev" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="Сантехник"
+                    android:text="Послеремонтная уборка"
+                    android:textColor="@color/main_color"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="0dp"
+                android:background="#1670bd"></View>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/chemistry"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:background="@drawable/list_selector">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="35dp"
+                    android:background="@drawable/imageback"
+                    android:padding="9dp"
+                    android:src="@drawable/cleandry" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Химчистка"
                     android:textColor="@color/main_color"
                     android:textSize="18dp" />
             </LinearLayout>
@@ -142,7 +183,7 @@
                 android:textColor="@color/call_color"
                 android:textSize="18dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="40dp"/>
+                />
         </LinearLayout>
 
     </LinearLayout>

@@ -4,5 +4,11 @@
     <string name="app_name">Cleaning</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_cleaning">Cleaning</string>
+    <string name="number_to_call">tel:+77083190091</string>
+    <string name="title_activity_clean_gen">CleanGen</string>
+    <string name="title_activity_customer_contacts">CustomerContacts</string>
+    <string name="title_activity_calculator_gen">CalculatorGen</string>
+    <string name="title_activity_other_services_gen">OtherServicesGen</string>
 
 </resources>

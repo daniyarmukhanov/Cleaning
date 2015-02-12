@@ -3,7 +3,10 @@ package artlines.kz.cleaning;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -19,6 +22,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -37,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
+        currentMenuPosition = -1;
         getSupportActionBar().hide();
         final SlidingMenu menu = new SlidingMenu(this);
         menu.setMode(SlidingMenu.LEFT);
@@ -62,9 +66,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        if (currentMenuPosition != -1) {
-            ((ListView) findViewById(R.id.sidemenu)).setItemChecked(currentMenuPosition, true);
-        }
+
 
         String[] items = {"Авторизация","FAQ","О Компании","Контакты"};
         ((ListView) findViewById(R.id.sidemenu)).setAdapter(
@@ -85,6 +87,24 @@ public class MainActivity extends ActionBarActivity {
                 menuToggle();
             }
         });
+        TextView call=(TextView)findViewById(R.id.call);
+        call.setPaintFlags(call.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(getResources().getString(R.string.number_to_call)));
+                startActivity(intent);
+            }
+        });
+        LinearLayout cleaning=(LinearLayout)findViewById(R.id.cleaning);
+        cleaning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Cleaning.class));
+            }
+        });
+
     }
 
 
@@ -102,7 +122,7 @@ public class MainActivity extends ActionBarActivity {
     private void changeFragment(int position) {
         switch (position) {
             case 0:
-                //showFragment(new MainFragment());
+                showFragment(new AuthorizationFragment());
                 break;
             case 1:
                // showFragment(new ChannelsFragment());
@@ -153,4 +173,9 @@ public class MainActivity extends ActionBarActivity {
             menu.showMenu();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        currentMenuPosition = -1;
+    }
 }

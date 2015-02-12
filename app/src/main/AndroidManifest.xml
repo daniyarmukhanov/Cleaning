@@ -16,6 +16,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Cleaning"
+            android:label="@string/title_activity_cleaning"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="artlines.kz.cleaning.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CleanGen"
+            android:label="@string/title_activity_clean_gen"
+            android:parentActivityName=".Cleaning" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="artlines.kz.cleaning.Cleaning" />
+        </activity>
+        <activity
+            android:name=".CustomerContacts"
+            android:label="@string/title_activity_customer_contacts"
+            android:parentActivityName=".CleanGen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="artlines.kz.cleaning.CleanGen" />
+        </activity>
+        <activity
+            android:name=".CalculatorGen"
+            android:label="@string/title_activity_calculator_gen" >
+        </activity>
+        <activity
+            android:name=".OtherServicesGen"
+            android:label="@string/title_activity_other_services_gen" >
+        </activity>
     </application>
 
 </manifest>
