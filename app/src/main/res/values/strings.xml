@@ -11,4 +11,20 @@
     <string name="title_activity_calculator_gen">CalculatorGen</string>
     <string name="title_activity_other_services_gen">OtherServicesGen</string>
 
+    <string-array name="fridge_inside">
+        <item>Да</item>
+        <item>Нет</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Алматы</item>
+        <item>Астана</item>
+        <item>Шымкент</item>
+    </string-array>
+
+    <string name="title_activity_address">address</string>
+    <string name="title_activity_payment">Payment</string>
+    <string name="title_activity_success">Success</string>
+    <string name="title_activity_plumbing">Plumbing</string>
+    <string name="title_activity_calculator_super">CalculatorSuper</string>
+
 </resources>

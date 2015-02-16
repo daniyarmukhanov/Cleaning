@@ -9,16 +9,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class OtherServicesGen extends ActionBarActivity {
+public class Success extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_services_gen);
+        setContentView(R.layout.activity_success);
         getSupportActionBar().hide();
         TextView call=(TextView)findViewById(R.id.call);
         call.setPaintFlags(call.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -30,18 +29,11 @@ public class OtherServicesGen extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        ImageView back= (ImageView) findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-        Button next=(Button)findViewById(R.id.next);
+        Button next=(Button)findViewById(R.id.main);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OtherServicesGen.this, Address.class));
+                startActivity(new Intent(Success.this, MainActivity.class));
             }
         });
     }
@@ -50,7 +42,7 @@ public class OtherServicesGen extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_other_services_gen, menu);
+        getMenuInflater().inflate(R.menu.menu_success, menu);
         return true;
     }
 

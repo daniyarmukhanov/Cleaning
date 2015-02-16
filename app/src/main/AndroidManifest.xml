@@ -48,6 +48,26 @@
             android:name=".OtherServicesGen"
             android:label="@string/title_activity_other_services_gen" >
         </activity>
+        <activity
+            android:name=".Address"
+            android:label="@string/title_activity_address" >
+        </activity>
+        <activity
+            android:name=".Payment"
+            android:label="@string/title_activity_payment" >
+        </activity>
+        <activity
+            android:name=".Success"
+            android:label="@string/title_activity_success" >
+        </activity>
+        <activity
+            android:name=".Plumbing"
+            android:label="@string/title_activity_plumbing" >
+        </activity>
+        <activity
+            android:name=".CalculatorSuper"
+            android:label="@string/title_activity_calculator_super" >
+        </activity>
     </application>
 
 </manifest>

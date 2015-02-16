@@ -13,12 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class OtherServicesGen extends ActionBarActivity {
+public class Address extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_services_gen);
+        setContentView(R.layout.activity_address);
         getSupportActionBar().hide();
         TextView call=(TextView)findViewById(R.id.call);
         call.setPaintFlags(call.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -41,7 +41,15 @@ public class OtherServicesGen extends ActionBarActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OtherServicesGen.this, Address.class));
+                startActivity(new Intent(Address.this, Payment.class));
+            }
+        });
+        TextView reg=(TextView)findViewById(R.id.registertext);
+        reg.setPaintFlags(reg.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
@@ -50,7 +58,7 @@ public class OtherServicesGen extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_other_services_gen, menu);
+        getMenuInflater().inflate(R.menu.menu_address, menu);
         return true;
     }
 

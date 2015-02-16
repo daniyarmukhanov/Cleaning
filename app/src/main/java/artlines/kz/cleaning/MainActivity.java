@@ -104,6 +104,13 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(new Intent(MainActivity.this, Cleaning.class));
             }
         });
+        LinearLayout plumber=(LinearLayout)findViewById(R.id.plumber);
+        plumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CalculatorSuper.class));
+            }
+        });
 
     }
 

@@ -9,16 +9,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-public class OtherServicesGen extends ActionBarActivity {
+public class CalculatorSuper extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_services_gen);
+        setContentView(R.layout.activity_calculator_super);
         getSupportActionBar().hide();
         TextView call=(TextView)findViewById(R.id.call);
         call.setPaintFlags(call.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -41,16 +44,32 @@ public class OtherServicesGen extends ActionBarActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OtherServicesGen.this, Address.class));
+               // startActivity(new Intent(CalculatorGen.this, OtherServicesGen.class));
+            }
+        });
+        final LinearLayout hidden=(LinearLayout)findViewById(R.id.hidden);
+
+        CheckBox chair=(CheckBox)findViewById(R.id.chair);
+        chair.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                hidden.setVisibility(View.VISIBLE);
+                }else{
+                    hidden.setVisibility(View.GONE);
+                }
+
             }
         });
     }
 
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_other_services_gen, menu);
+        getMenuInflater().inflate(R.menu.menu_calculator_super, menu);
         return true;
     }
 
