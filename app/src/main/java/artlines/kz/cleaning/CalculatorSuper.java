@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -53,10 +55,31 @@ public class CalculatorSuper extends ActionBarActivity {
         chair.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Animation slideUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
+                slideUp.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        hidden.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        hidden.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+                Animation slideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
                 if(isChecked){
+                hidden.setAnimation(slideDown);
                 hidden.setVisibility(View.VISIBLE);
                 }else{
+
                     hidden.setVisibility(View.GONE);
+
                 }
 
             }

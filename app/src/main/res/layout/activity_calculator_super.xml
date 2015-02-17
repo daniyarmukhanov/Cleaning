@@ -68,75 +68,143 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:orientation="vertical">
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="20dp"
-                    android:background="#1670bd"></View>
+                android:animateLayoutChanges="true">
 
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Стулья"
-            android:textColor="@color/main_color"
-            android:textSize="18dp"
-            android:layout_marginLeft="20dp"
-            android:layout_centerVertical="true"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:checked="false"
-            android:id="@+id/chair"
-            android:layout_alignParentRight="true"
-            android:button="@drawable/custom_check"/>
-        </RelativeLayout>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="0dp"
-        android:background="#1670bd"></View>
-
-    </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/hidden"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/hidden"
-                    android:visibility="gone">
+                    android:layout_below="@+id/chairline"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:orientation="horizontal"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
-                            android:text="sample"
-                            android:layout_margin="10dp"
-                            />
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Бархатные, шт."
+                            android:textSize="16dp" />
+
                         <EditText
                             android:layout_width="fill_parent"
                             android:layout_height="40dp"
+                            android:layout_margin="10dp"
                             android:background="@drawable/rounded_edit"
-                            android:layout_margin="10dp"/>
-                        </LinearLayout>
+                            android:padding="10dp" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Шелковые, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Драп, текстиль, мешковина, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/topline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <View
+                    android:id="@+id/whitespace"
+                    android:layout_width="fill_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/white"></View>
+
+                <LinearLayout
+                    android:id="@+id/chairline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/topline"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="Стулья"
+                            android:textColor="@color/main_color"
+                            android:textSize="18dp" />
+
+                        <CheckBox
+                            android:id="@+id/chair"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="10dp"
+                            android:button="@drawable/custom_check"
+                            android:checked="false" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="0dp"
+                        android:background="#1670bd"></View>
+
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/next"
                     android:layout_width="fill_parent"
                     android:layout_height="50dp"
+                    android:layout_below="@id/hidden"
                     android:layout_marginLeft="70dp"
                     android:layout_marginRight="70dp"
                     android:layout_marginTop="20dp"
@@ -149,13 +217,15 @@
                     android:id="@+id/call"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/next"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
                     android:text="Позвонить"
                     android:textColor="@color/call_color"
                     android:textSize="18dp" />
-            </LinearLayout>
+            </RelativeLayout>
         </ScrollView>
 
 
