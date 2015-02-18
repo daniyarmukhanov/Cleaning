@@ -49,7 +49,14 @@ public class CustomerContacts extends ActionBarActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(getIntent().hasExtra("type")){
+                    if(getIntent().getStringExtra("type").equals("chemistry"))
+                        startActivity(new Intent(CustomerContacts.this, CalculatorSuper.class));
+                    if(getIntent().getStringExtra("type").equals("dev"))
+                        startActivity(new Intent(CustomerContacts.this, CalculatorDev.class));
+                }else
                 startActivity(new Intent(CustomerContacts.this, CalculatorGen.class));
+
             }
         });
     }

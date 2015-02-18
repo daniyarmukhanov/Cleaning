@@ -13,12 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class CleanGen extends ActionBarActivity {
+public class CleanDev extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clean_gen);
+        setContentView(R.layout.activity_clean_dev);
         getSupportActionBar().hide();
         TextView call=(TextView)findViewById(R.id.call);
         call.setPaintFlags(call.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -41,20 +41,19 @@ public class CleanGen extends ActionBarActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CleanGen.this, CustomerContacts.class));
+                startActivity(new Intent(CleanDev.this, CustomerContacts.class).putExtra("type", "dev"));
             }
         });
         TextView fish=(TextView)findViewById(R.id.fish);
-        String forfish="•  Протирка пыли с крышек столов, тумбочек, подоконников, шкафов и прочих поверхностей\n\n"+"•  Уборка дверных блоков, лестничных пролетов и площадок\n\n"+"•  Мойка и дезинфекция мусорных корзин, замена полиэтиленовых пакетов в мусорных корзинах, вынос мусора\n\n"+"•  Сухая чистка ковров\n\n"+"•  Очистка зеркальных поверхностей\n\n"+"•  Мытье отопительных труб и батарей\n\n"+"•  Протирка розеток и выключателей\n\n"+"•  Влажная и сухая протирка осветительных приборов";
+        String forfish="•  Удаление трудно выводимых пятен краски, штукатурки, клея и цемента со стен, и пола\n\n"+"•  Мытьё пола, стен, потолка, мебели, дверей и прочее\n\n"+"•  Мытьё окон с обеих сторон"+"•  Гигиеническая обработка санитарных и ванных комнат\n\n"+"•  Внутренности шкафов\n\n"+"•  Внутренности холодильника\n\n"+"•  Мытье стен";
         fish.setText(forfish);
-
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_clean_gen, menu);
+        getMenuInflater().inflate(R.menu.menu_clean_dev, menu);
         return true;
     }
 

@@ -43,7 +43,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="45dp"
             android:layout_marginTop="45dp"
-            android:text="Генеральная уборка:"
+            android:text="Послеремонтная уборка:"
             android:textColor="#1670bd"
             android:textSize="18dp" />
 
@@ -78,15 +78,15 @@
             android:textColor="@color/white" />
 
 
-            <TextView
-                android:id="@+id/call"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Позвонить"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@color/call_color"
-                android:textSize="18dp" />
+        <TextView
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Позвонить"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/call_color"
+            android:textSize="18dp" />
 
 
     </LinearLayout>

@@ -26,5 +26,8 @@
     <string name="title_activity_success">Success</string>
     <string name="title_activity_plumbing">Plumbing</string>
     <string name="title_activity_calculator_super">CalculatorSuper</string>
+    <string name="title_activity_clean_dev">CleanDev</string>
+    <string name="title_activity_calculator_dev">CalculatorDev</string>
+    <string name="title_activity_chemistry">Chemistry</string>
 
 </resources>

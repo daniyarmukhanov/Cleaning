@@ -68,6 +68,18 @@
             android:name=".CalculatorSuper"
             android:label="@string/title_activity_calculator_super" >
         </activity>
+        <activity
+            android:name=".CleanDev"
+            android:label="@string/title_activity_clean_dev" >
+        </activity>
+        <activity
+            android:name=".CalculatorDev"
+            android:label="@string/title_activity_calculator_dev" >
+        </activity>
+        <activity
+            android:name=".Chemistry"
+            android:label="@string/title_activity_chemistry" >
+        </activity>
     </application>
 
 </manifest>

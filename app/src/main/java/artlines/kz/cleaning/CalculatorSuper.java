@@ -55,26 +55,9 @@ public class CalculatorSuper extends ActionBarActivity {
         chair.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Animation slideUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
-                slideUp.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                        hidden.setVisibility(View.GONE);
-                    }
 
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        hidden.setVisibility(View.GONE);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
                 Animation slideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
                 if(isChecked){
-                hidden.setAnimation(slideDown);
                 hidden.setVisibility(View.VISIBLE);
                 }else{
 
@@ -84,6 +67,163 @@ public class CalculatorSuper extends ActionBarActivity {
 
             }
         });
+
+        final LinearLayout hiddensimple=(LinearLayout)findViewById(R.id.hiddenchairsimple);
+
+        CheckBox chairsimple=(CheckBox)findViewById(R.id.chair2);
+        chairsimple.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                Animation slideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
+                if(isChecked){
+                    //hiddensimple.setAnimation(slideDown);
+                    hiddensimple.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddensimple.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddenkreslo=(LinearLayout)findViewById(R.id.hiddenkreslo);
+
+        CheckBox kreslocheck=(CheckBox)findViewById(R.id.kreslocheckbox);
+        kreslocheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddenkreslo.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddenkreslo.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddenkover=(LinearLayout)findViewById(R.id.hiddenkover);
+
+        CheckBox kovercheck=(CheckBox)findViewById(R.id.kovercheckbox);
+        kovercheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddenkover.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddenkover.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddensofa=(LinearLayout)findViewById(R.id.hiddensofa);
+
+        CheckBox sofacheck=(CheckBox)findViewById(R.id.sofacheckbox);
+        sofacheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddensofa.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddensofa.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddenkresla=(LinearLayout)findViewById(R.id.hiddenkresla);
+
+        CheckBox kreslacheck=(CheckBox)findViewById(R.id.kreslacheckbox);
+        kreslacheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddenkresla.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddenkresla.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddentul=(LinearLayout)findViewById(R.id.hiddentul);
+
+        CheckBox tulcheck=(CheckBox)findViewById(R.id.tulcheckbox);
+        tulcheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddentul.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddentul.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddenportier=(LinearLayout)findViewById(R.id.hiddenportier);
+
+        CheckBox portiercheck=(CheckBox)findViewById(R.id.portiercheckbox);
+        portiercheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddenportier.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddenportier.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddenlambriken=(LinearLayout)findViewById(R.id.hiddenlambriken);
+
+        CheckBox lambrikencheck=(CheckBox)findViewById(R.id.lambrikencheckbox);
+        lambrikencheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddenlambriken.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddenlambriken.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+        final LinearLayout hiddenmatras=(LinearLayout)findViewById(R.id.hiddenmatras);
+
+        CheckBox matrascheck=(CheckBox)findViewById(R.id.matrascheckbox);
+        matrascheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    hiddenmatras.setVisibility(View.VISIBLE);
+                }else{
+
+                    hiddenmatras.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
+
     }
 
 

@@ -3,6 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:background="#FFFFFF"
     tools:ignore="MergeRootFrame">
 
@@ -10,6 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="top"
+        android:animateLayoutChanges="true"
         android:orientation="vertical"
         android:weightSum="10">
 
@@ -17,6 +19,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
+            android:animateLayoutChanges="true"
+
             android:background="@color/main_color">
 
             <ImageView
@@ -40,6 +44,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
             android:background="@color/sum"
             android:orientation="horizontal">
 
@@ -51,7 +56,8 @@
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,17 +79,32 @@
                 android:layout_height="fill_parent"
                 android:animateLayoutChanges="true">
 
+                <View
+                    android:id="@+id/topline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#1670bd"></View>
+
+                <!--HERE IS ONE ITEM-->
                 <LinearLayout
                     android:id="@+id/hidden"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/chairline"
-                    android:visibility="gone"
-                    android:orientation="vertical">
+                    android:layout_below="@+id/chairbacktitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
 
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
                         android:orientation="horizontal">
 
                         <TextView
@@ -99,12 +120,14 @@
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
                             android:background="@drawable/rounded_edit"
+                            android:inputType="number"
                             android:padding="10dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
                         android:orientation="horizontal">
 
                         <TextView
@@ -120,12 +143,14 @@
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
                             android:background="@drawable/rounded_edit"
+                            android:inputType="number"
                             android:padding="10dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
                         android:orientation="horizontal">
 
                         <TextView
@@ -133,7 +158,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="20dp"
-                            android:text="Драп, текстиль, мешковина, шт."
+                            android:text="Драп/текстиль/мешковина, шт."
                             android:textSize="16dp" />
 
                         <EditText
@@ -141,70 +166,1191 @@
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
                             android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/chairbacktitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/topline"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Стулья со спинками"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/chair"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hidden"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+
+                <!--END OF ITEM-->
+                <!--HERE IS ONE ITEM-->
+
+
+                <LinearLayout
+                    android:id="@+id/hiddenchairsimple"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chairsimpletitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Бархатные, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Шелковые, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Драп/текстиль/мешковина, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/chairsimpletitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomline"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Стулья без спинки"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/chair2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomlinesimple"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddenchairsimple"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <LinearLayout
+                    android:id="@+id/hiddenkreslo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/kreslotitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Бархатные, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Шелковые, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Драп/текстиль/мешковина, шт."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/kreslotitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomlinesimple"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Стулья-кресла"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/kreslocheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomkreslo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddenkreslo"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <LinearLayout
+                    android:id="@+id/hiddenkover"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/kovertitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Шелковые, кв.м."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Травка, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Синтетика, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Шерстяные, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Ручной работы, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Рельефные, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Ковролан, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Стриженный велюр с длинным ворсом, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Стриженный велюр с коротким ворсом, кв.м"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
                             android:padding="10dp" />
                     </LinearLayout>
 
                 </LinearLayout>
 
+                <RelativeLayout
+                    android:id="@+id/kovertitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomkreslo"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Ковры"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/kovercheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
                 <View
-                    android:id="@+id/topline"
+                    android:id="@+id/bottomkover"
                     android:layout_width="fill_parent"
                     android:layout_height="2dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/hiddenkover"
                     android:background="#1670bd"
                     android:paddingTop="100dp"></View>
 
-                <View
-                    android:id="@+id/whitespace"
-                    android:layout_width="fill_parent"
-                    android:layout_height="20dp"
-                    android:layout_alignParentTop="true"
-                    android:background="@color/white"></View>
-
                 <LinearLayout
-                    android:id="@+id/chairline"
+                    android:id="@+id/hiddensofa"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/topline"
-                    android:background="@color/white"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="20dp"
-                            android:text="Стулья"
-                            android:textColor="@color/main_color"
-                            android:textSize="18dp" />
-
-                        <CheckBox
-                            android:id="@+id/chair"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_margin="10dp"
-                            android:button="@drawable/custom_check"
-                            android:checked="false" />
-                    </RelativeLayout>
+                    android:layout_below="@+id/sofatitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginTop="0dp"
+                        android:layout_height="1dp"
                         android:background="#1670bd"></View>
 
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Бархатные, пос. место"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Шелковые, пос. место"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Драп/текстиль/мешковина, пос. место"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/sofatitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomkover"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Диваны"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/sofacheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomsofa"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddensofa"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <LinearLayout
+                    android:id="@+id/hiddenkresla"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/kreslatitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Бархатные, пос. место"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Шелковые, пос. место"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Драп/текстиль/мешковина, пос. место"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/kreslatitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomsofa"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Кресла"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/kreslacheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomkresla"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddenkresla"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <LinearLayout
+                    android:id="@+id/hiddentul"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tultitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Тюль обычная, кв.м."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Тюль сложная(с вышивкой, с набитым рисунком, с набитым велюром, т.д.), кв.м."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tultitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomkresla"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Тюли"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/tulcheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomtul"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddentul"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <LinearLayout
+                    android:id="@+id/hiddenportier"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/portiertitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Одинарные, кв.м."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Двойные кв.м."
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/portiertitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomtul"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Портьеры"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/portiercheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomportier"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddenportier"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <LinearLayout
+                    android:id="@+id/hiddenlambriken"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lambrikentitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Ламбрикены, пог.метр"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lambrikentitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomportier"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Ламбрикены"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/lambrikencheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottomlambriken"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddenlambriken"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
+
+                <LinearLayout
+                    android:id="@+id/hiddenmatras"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/matrastitle"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#1670bd"></View>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Односпальные, штук"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Полутороспальные, штук"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="20dp"
+                            android:text="Двуспальные, штук"
+                            android:textSize="16dp" />
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/rounded_edit"
+                            android:inputType="number"
+                            android:padding="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/matrastitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottomlambriken"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="Матрасы"
+                        android:textColor="@color/main_color"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/matrascheckbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/custom_check"
+                        android:checked="false" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottommatras"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/hiddenmatras"
+                    android:background="#1670bd"
+                    android:paddingTop="100dp"></View>
 
                 <Button
                     android:id="@+id/next"
                     android:layout_width="fill_parent"
                     android:layout_height="50dp"
-                    android:layout_below="@id/hidden"
+                    android:layout_below="@id/bottommatras"
                     android:layout_marginLeft="70dp"
                     android:layout_marginRight="70dp"
                     android:layout_marginTop="20dp"
@@ -225,6 +1371,9 @@
                     android:text="Позвонить"
                     android:textColor="@color/call_color"
                     android:textSize="18dp" />
+
+
+                <!--END OF ITEM-->
             </RelativeLayout>
         </ScrollView>
 

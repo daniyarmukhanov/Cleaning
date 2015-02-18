@@ -44,6 +44,20 @@ public class Cleaning extends ActionBarActivity {
                 startActivity(new Intent(Cleaning.this, CleanGen.class));
             }
         });
+        LinearLayout after=(LinearLayout)findViewById(R.id.after);
+        after.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Cleaning.this, CleanDev.class));
+            }
+        });
+        LinearLayout chemistry=(LinearLayout)findViewById(R.id.chemistry);
+        chemistry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Cleaning.this, Chemistry.class));
+            }
+        });
 
     }
 

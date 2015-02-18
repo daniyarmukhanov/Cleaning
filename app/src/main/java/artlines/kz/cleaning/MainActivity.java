@@ -108,7 +108,7 @@ public class MainActivity extends ActionBarActivity {
         plumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CalculatorSuper.class));
+                startActivity(new Intent(MainActivity.this, Plumbing.class));
             }
         });
 
