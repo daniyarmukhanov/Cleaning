@@ -48,6 +48,7 @@
                 android:orientation="vertical">
                 <EditText
                     android:layout_width="fill_parent"
+                    android:id="@+id/name"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="20dp"
@@ -59,6 +60,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_marginLeft="20dp"
+                    android:id="@+id/email"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
                     android:layout_height="45dp"
@@ -69,6 +71,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_marginLeft="20dp"
+                    android:id="@+id/mobile"
                     android:layout_marginRight="20dp"
                     android:inputType="phone"
                     android:layout_marginBottom="20dp"
@@ -85,6 +88,7 @@
                     android:layout_marginRight="20dp"
                     android:layout_height="45dp"
                     android:padding="10dp"
+                    android:id="@+id/password"
                     android:hint="Пароль"
                     android:inputType="textPassword"
                     android:background="@drawable/rounded_edit"/>
@@ -99,6 +103,7 @@
                 <Spinner
                     android:layout_width="fill_parent"
                     android:layout_height="45dp"
+                    android:id="@+id/city"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/dropdown_long"
@@ -112,6 +117,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
+                    android:id="@+id/address"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="20dp"
                     android:hint="Адрес"

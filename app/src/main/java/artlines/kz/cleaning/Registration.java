@@ -1,11 +1,27 @@
 package artlines.kz.cleaning;
 
+import android.app.ProgressDialog;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jsonparser.JSONParser;
 
 
 public class Registration extends ActionBarActivity {
@@ -22,7 +38,67 @@ public class Registration extends ActionBarActivity {
                 onBackPressed();
             }
         });
+        Button next=(Button)findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
+    private class MakePost extends AsyncTask {
+
+        JSONParser jsonParser = new JSONParser();
+        JSONObject jsonObject;
+        ProgressDialog progressDialog;
+
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+
+            progressDialog = new ProgressDialog(Registration.this);
+            progressDialog.setMessage("Wait please...");
+            progressDialog.setIndeterminate(false);
+            progressDialog.setCancelable(true);
+
+        }
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            EditText field;
+            field=(EditText)findViewById(R.id.email);
+            String email = field.getText().toString();
+            String password ="";
+            String name="";
+            String phone = "";
+            String city ="";
+            String address="";
+
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("email", email));
+            params.add(new BasicNameValuePair("password", password));
+           // params.add(new BasicNameValuePair("offerId", post_id));
+           // params.add(new BasicNameValuePair("login", instagram));
+            params.add(new BasicNameValuePair("stId", "1"));
+
+            jsonObject = jsonParser.makeHttpRequest("http://192.168.43.155:8888/akserver/user/APICreate", "POST", params);
+            Log.d("CREATE", jsonObject.toString());
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+
+
+        }
+    }
+
 
 
     @Override
