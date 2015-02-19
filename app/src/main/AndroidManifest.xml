@@ -80,6 +80,30 @@
             android:name=".Chemistry"
             android:label="@string/title_activity_chemistry" >
         </activity>
+        <activity
+            android:name=".Registration"
+            android:label="@string/title_activity_registration" >
+        </activity>
+        <activity
+            android:name=".CalculatorMetal"
+            android:label="@string/title_activity_calculator_metal" >
+        </activity>
+        <activity
+            android:name=".CalculatorPVH"
+            android:label="@string/title_activity_calculator_pvh" >
+        </activity>
+        <activity
+            android:name=".CalculatorChannel"
+            android:label="@string/title_activity_calculator_channel" >
+        </activity>
+        <activity
+            android:name=".CalculatorFayans"
+            android:label="@string/title_activity_calculator_fayans" >
+        </activity>
+        <activity
+            android:name=".CalculatorWarm"
+            android:label="@string/title_activity_calculator_warm" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,8 +1,10 @@
 package artlines.kz.cleaning;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,8 +14,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.prefs.Preferences;
+
 
 public class CleanGen extends ActionBarActivity {
+    boolean authorized;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,8 @@ public class CleanGen extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+        SharedPreferences myPref= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        authorized=myPref.getBoolean("authorized", false);
         ImageView back= (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +48,9 @@ public class CleanGen extends ActionBarActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(authorized){
+                    startActivity(new Intent(CleanGen.this, CalculatorGen.class));
+                }else
                 startActivity(new Intent(CleanGen.this, CustomerContacts.class));
             }
         });

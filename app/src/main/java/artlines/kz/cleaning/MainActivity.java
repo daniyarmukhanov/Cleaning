@@ -4,9 +4,11 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -25,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -34,6 +37,8 @@ public class MainActivity extends ActionBarActivity {
     private static int currentMenuPosition = -1;
 
     private SlidingMenu menu;
+    boolean authorized;
+    SharedPreferences myPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,8 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().hide();
         final SlidingMenu menu = new SlidingMenu(this);
         menu.setMode(SlidingMenu.LEFT);
+        myPref= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        authorized=myPref.getBoolean("authorized", false);
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
@@ -69,6 +76,8 @@ public class MainActivity extends ActionBarActivity {
 
 
         String[] items = {"Авторизация","FAQ","О Компании","Контакты"};
+        if(authorized)
+            items=new String[]{"Выйти","FAQ","О Компании","Контакты"};
         ((ListView) findViewById(R.id.sidemenu)).setAdapter(
                 new ArrayAdapter<Object>(
                         this,
@@ -129,6 +138,14 @@ public class MainActivity extends ActionBarActivity {
     private void changeFragment(int position) {
         switch (position) {
             case 0:
+                if(authorized){
+                    SharedPreferences.Editor editor=myPref.edit();
+                    editor.remove("authorized");
+                    editor.commit();
+                    authorized=false;
+                    Toast.makeText(getApplicationContext(), "Вы вышли из аккаунта", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this, MainActivity.class));
+                }else
                 showFragment(new AuthorizationFragment());
                 break;
             case 1:

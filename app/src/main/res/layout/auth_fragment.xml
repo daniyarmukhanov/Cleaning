@@ -68,6 +68,7 @@
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_marginRight="60dp"
+            android:id="@+id/loginbutton"
             android:layout_marginLeft="60dp"
             android:background="@drawable/blue_button"
             android:text="Войти"

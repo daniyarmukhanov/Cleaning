@@ -29,5 +29,11 @@
     <string name="title_activity_clean_dev">CleanDev</string>
     <string name="title_activity_calculator_dev">CalculatorDev</string>
     <string name="title_activity_chemistry">Chemistry</string>
+    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_calculator_metal">CalculatorMetal</string>
+    <string name="title_activity_calculator_pvh">CalculatorPVH</string>
+    <string name="title_activity_calculator_channel">CalculatorChannel</string>
+    <string name="title_activity_calculator_fayans">CalculatorFayans</string>
+    <string name="title_activity_calculator_warm">CalculatorWarm</string>
 
 </resources>

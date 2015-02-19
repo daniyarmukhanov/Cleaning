@@ -35,7 +35,7 @@ public class CustomerContacts extends ActionBarActivity {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(CustomerContacts.this, Registration.class));
             }
         });
         ImageView back= (ImageView) findViewById(R.id.back);
@@ -54,6 +54,16 @@ public class CustomerContacts extends ActionBarActivity {
                         startActivity(new Intent(CustomerContacts.this, CalculatorSuper.class));
                     if(getIntent().getStringExtra("type").equals("dev"))
                         startActivity(new Intent(CustomerContacts.this, CalculatorDev.class));
+                    if(getIntent().getStringExtra("type").equals("metal"))
+                        startActivity(new Intent(CustomerContacts.this, CalculatorMetal.class));
+                    if(getIntent().getStringExtra("type").equals("pvh"))
+                        startActivity(new Intent(CustomerContacts.this, CalculatorPVH.class));
+                    if(getIntent().getStringExtra("type").equals("channel"))
+                        startActivity(new Intent(CustomerContacts.this, CalculatorChannel.class));
+                    if(getIntent().getStringExtra("type").equals("fayans"))
+                        startActivity(new Intent(CustomerContacts.this, CalculatorFayans.class));
+                    if(getIntent().getStringExtra("type").equals("warm"))
+                        startActivity(new Intent(CustomerContacts.this, CalculatorWarm.class));
                 }else
                 startActivity(new Intent(CustomerContacts.this, CalculatorGen.class));
 
