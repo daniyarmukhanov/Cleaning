@@ -46,10 +46,12 @@
                    android:layout_width="fill_parent"
                    android:layout_marginLeft="30dp"
                    android:layout_marginRight="30dp"
+                   android:id="@+id/email"
                    android:layout_marginTop="20dp"
                    android:layout_marginBottom="20dp"
                    android:layout_height="45dp"
                    android:padding="10dp"
+                   android:inputType="textEmailAddress"
                    android:hint="Электронная почта"
                    android:background="@drawable/rounded_edit"/>
 
@@ -61,6 +63,7 @@
                     android:layout_marginBottom="30dp"
                     android:layout_height="45dp"
                     android:padding="10dp"
+                    android:id="@id/password"
                     android:hint="Пароль"
                     android:inputType="textPassword"
                     android:background="@drawable/rounded_edit"/>

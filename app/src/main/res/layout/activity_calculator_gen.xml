@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="0 тг"
+            android:id="@+id/sum"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_margin="20dp"/></RelativeLayout>

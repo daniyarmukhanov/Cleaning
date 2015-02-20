@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_cleaning">Cleaning</string>
-    <string name="number_to_call">tel:+77083190091</string>
+    <string name="number_to_call">tel:+77479492088</string>
     <string name="title_activity_clean_gen">CleanGen</string>
     <string name="title_activity_customer_contacts">CustomerContacts</string>
     <string name="title_activity_calculator_gen">CalculatorGen</string>
@@ -21,6 +21,7 @@
         <item>Шымкент</item>
     </string-array>
 
+
     <string name="title_activity_address">address</string>
     <string name="title_activity_payment">Payment</string>
     <string name="title_activity_success">Success</string>
@@ -35,5 +36,6 @@
     <string name="title_activity_calculator_channel">CalculatorChannel</string>
     <string name="title_activity_calculator_fayans">CalculatorFayans</string>
     <string name="title_activity_calculator_warm">CalculatorWarm</string>
+    <string name="url">http://192.168.43.155:8888/akserver/</string>
 
 </resources>

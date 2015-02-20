@@ -7,16 +7,27 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
 public class CalculatorWarm extends ActionBarActivity {
     boolean authorized;
+    int sum;
+    String sumstring, tempstring;
+    int calcConst[];
+    TextView text[];
+    EditText editText[];
+    LinearLayout inputLayout;
+    TextView sumTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +53,38 @@ public class CalculatorWarm extends ActionBarActivity {
             }
         });
         Button next=(Button)findViewById(R.id.next);
+        sum=0;
+        sumstring="";
+        sumTV=(TextView)findViewById(R.id.sum);
+        inputLayout =(LinearLayout)findViewById(R.id.calc_channel);
+        editText=new EditText[inputLayout.getChildCount()];
+        text=new TextView[inputLayout.getChildCount()];
+        calcConst=getResources().getIntArray(R.array.CalcWarm);
+        for (int i=0;i<inputLayout.getChildCount();i++){
+            LinearLayout ll= (LinearLayout) inputLayout.getChildAt(i);
+            editText[i]=(EditText)ll.getChildAt(1);
+            text[i]= (TextView) ll.getChildAt(0);
+
+            editText[i].addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    calcSum();
+                }
+            });
+
+
+
+        }
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +94,17 @@ public class CalculatorWarm extends ActionBarActivity {
                     startActivity(new Intent(CalculatorWarm.this, Address.class));
             }
         });
+    }
+    private void calcSum() {
+        sum=0;
+        for (int i=0;i<inputLayout.getChildCount();i++){
+            LinearLayout ll= (LinearLayout) inputLayout.getChildAt(i);
+            editText[i]=(EditText)ll.getChildAt(1);
+            if(editText[i].getText().toString().length()>0){
+                sum+=Integer.parseInt(editText[i].getText().toString())*calcConst[i];
+            }
+        }
+        sumTV.setText(sum+" тг");
     }
 
 

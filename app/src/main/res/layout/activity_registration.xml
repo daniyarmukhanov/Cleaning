@@ -137,6 +137,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
+                        android:id="@+id/agree"
                         android:checked="true"
                         android:button="@drawable/custom_check"/>
                     <TextView

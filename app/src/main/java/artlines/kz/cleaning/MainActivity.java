@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -59,6 +60,9 @@ public class MainActivity extends ActionBarActivity {
         menu.setBackgroundColor(getResources().getColor(R.color.sliding_menu_back_color));
         menu.setBehindWidthRes(R.dimen.slidingmenu_behind_width);
         menu.setSelectorDrawable(R.drawable.sidemenu_items_background);
+        if(getIntent().hasExtra("reg")){
+            changeFragment(0);
+        }
 
 
         ((ListView) findViewById(R.id.sidemenu)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -141,6 +145,8 @@ public class MainActivity extends ActionBarActivity {
                 if(authorized){
                     SharedPreferences.Editor editor=myPref.edit();
                     editor.remove("authorized");
+                    editor.remove("mail");
+                    editor.remove("password");
                     editor.commit();
                     authorized=false;
                     Toast.makeText(getApplicationContext(), "Вы вышли из аккаунта", Toast.LENGTH_LONG).show();

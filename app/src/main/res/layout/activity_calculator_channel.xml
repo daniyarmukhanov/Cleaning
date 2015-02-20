@@ -55,10 +55,16 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="0 тг"
+                    android:id="@+id/sum"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_margin="20dp"/></RelativeLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/calc_channel"
+            android:orientation="vertical">
 
         <LinearLayout
         android:layout_width="fill_parent"
@@ -146,6 +152,7 @@
                 android:padding="10dp"
                 android:inputType="number"
                 android:background="@drawable/rounded_edit"/>
+        </LinearLayout>
         </LinearLayout>
 
 

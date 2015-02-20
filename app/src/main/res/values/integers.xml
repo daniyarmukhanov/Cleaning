@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="CalcChannel">
+        <item>700</item>
+        <item>400</item>
+        <item>1000</item>
+        <item>550</item>
+    </integer-array>
+    <integer-array name="CalcMetal">
+        <item>500</item>
+        <item>750</item>
+        <item>1000</item>
+        <item>1500</item>
+    </integer-array>
+    <integer-array name="CalcPVH">
+        <item>400</item>
+        <item>600</item>
+        <item>950</item>
+    </integer-array>
+    <integer-array name="CalcFayans">
+        <item>4000</item>
+        <item>550</item>
+        <item>6000</item>
+        <item>18000</item>
+        <item>4000</item>
+        <item>6000</item>
+        <item>6500</item>
+        <item>10000</item>
+        <item>3500</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>5000</item>
+        <item>4500</item>
+        <item>4500</item>
+
+    </integer-array>
+    <integer-array name="CalcWarm">
+    <item>7000</item>
+    <item>3500</item>
+    <item>50000</item>
+    <item>80000</item>
+    <item>120000</item>
+    <item>180000</item>
+</integer-array>
+    <integer-array name="CalcDev">
+        <item>350</item>
+    </integer-array>
+</resources>

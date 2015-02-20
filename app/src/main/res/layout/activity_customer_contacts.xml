@@ -48,6 +48,7 @@
             android:layout_marginBottom="20dp"
             android:layout_height="45dp"
             android:padding="10dp"
+            android:id="@+id/name"
             android:hint="Имя"
             android:background="@drawable/rounded_edit"/>
 
@@ -60,6 +61,7 @@
             android:layout_height="45dp"
             android:padding="10dp"
             android:hint="Мобильный телефон"
+            android:id="@+id/mobile"
             android:inputType="number"
             android:background="@drawable/rounded_edit"/>
         <EditText
@@ -70,6 +72,7 @@
             android:layout_height="45dp"
             android:padding="10dp"
             android:hint="Электронная почта"
+            android:id="@+id/mail"
             android:inputType="textEmailAddress"
             android:background="@drawable/rounded_edit"/>
         <LinearLayout
@@ -85,12 +88,14 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:checked="true"
+                android:id="@+id/agree"
                 android:button="@drawable/custom_check"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:textSize="15dp"
+
                 android:layout_gravity="center"
                 android:text="Согласен принимать рассылку об акциях"/>
             </LinearLayout>
