@@ -36,14 +36,69 @@
 
     </integer-array>
     <integer-array name="CalcWarm">
-    <item>7000</item>
-    <item>3500</item>
-    <item>50000</item>
-    <item>80000</item>
-    <item>120000</item>
-    <item>180000</item>
-</integer-array>
+        <item>7000</item>
+        <item>3500</item>
+        <item>50000</item>
+        <item>80000</item>
+        <item>120000</item>
+        <item>180000</item>
+    </integer-array>
     <integer-array name="CalcDev">
         <item>350</item>
     </integer-array>
+    <integer-array name="chairback">
+        <item>1000</item>
+        <item>1000</item>
+        <item>1000</item>
+    </integer-array>
+    <integer-array name="chairsimple">
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+    </integer-array>
+    <integer-array name="kreslo">
+        <item>3500</item>
+        <item>3500</item>
+        <item>3500</item>
+    </integer-array>
+    <integer-array name="kover">
+        <item>850</item>
+        <item>850</item>
+        <item>600</item>
+        <item>850</item>
+        <item>1000</item>
+        <item>850</item>
+        <item>600</item>
+        <item>1200</item>
+        <item>1000</item>
+    </integer-array>
+    <integer-array name="sofa">
+        <item>3000</item>
+        <item>3000</item>
+        <item>3000</item>
+    </integer-array>
+    <integer-array name="kresla">
+        <item>3500</item>
+        <item>3500</item>
+        <item>3500</item>
+
+    </integer-array>
+    <integer-array name="tul">
+        <item>300</item>
+        <item>350</item>
+    </integer-array>
+    <integer-array name="portier">
+        <item>550</item>
+        <item>650</item>
+
+    </integer-array>
+    <integer-array name="lambriken">
+        <item>2000</item>
+    </integer-array>
+    <integer-array name="matras">
+        <item>6000</item>
+        <item>8000</item>
+        <item>10000</item>
+    </integer-array>
+
 </resources>
