@@ -42,6 +42,7 @@ public class Payment extends ActionBarActivity {
         cash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(Payment.this, Success.class));
             }
         });
