@@ -1,19 +1,25 @@
 package artlines.kz.cleaning;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
 public class Address extends ActionBarActivity {
+    Spinner city;
+    EditText address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +43,15 @@ public class Address extends ActionBarActivity {
                 onBackPressed();
             }
         });
+        city=(Spinner)findViewById(R.id.city);
+        address=(EditText)findViewById(R.id.address);
         Button next=(Button)findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                myPref.edit().putString("city", city.getSelectedItem().toString()).commit();
+                myPref.edit().putString("address", address.getText().toString()).commit();
                 startActivity(new Intent(Address.this, Payment.class));
             }
         });

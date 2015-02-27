@@ -88,6 +88,20 @@ public class CalculatorPVH extends ActionBarActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sumstring="";
+                for (int i=0;i<inputLayout.getChildCount();i++){
+                    LinearLayout ll= (LinearLayout) inputLayout.getChildAt(i);
+                    editText[i]=(EditText)ll.getChildAt(1);
+                    if(editText[i].getText().toString().length()>0){
+                        text[i]= (TextView) ll.getChildAt(0);
+                        tempstring=text[i].getText().toString();
+                        sumstring+=tempstring+" "+editText[i].getText().toString()+"\n";
+                    }
+                }
+                SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                myPref.edit().putString("text", sumstring).commit();
+                myPref.edit().putString("type", "Монтаж ПВХ труб").commit();
+                myPref.edit().putString("price", sum+"").commit();
                 if (authorized) {
                     startActivity(new Intent(CalculatorPVH.this, Payment.class));
                 } else

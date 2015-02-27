@@ -64,7 +64,7 @@ public class CalculatorSuper extends ActionBarActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (authorized) {
+
                     LinearLayout tmp;
                     EditText editText[];
                     TextView textView[];
@@ -229,12 +229,11 @@ public class CalculatorSuper extends ActionBarActivity {
                     }
                     Log.d("startString",sumstring);
                     SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    myPref.edit().putBoolean("authorized", true).commit();
                     myPref.edit().putString("text", sumstring).commit();
                     myPref.edit().putString("type", "Химчистка").commit();
                     myPref.edit().putString("price", sum+"").commit();
 
-
+                if (authorized) {
                     startActivity(new Intent(CalculatorSuper.this, Payment.class));
                 } else
                     startActivity(new Intent(CalculatorSuper.this, Address.class));

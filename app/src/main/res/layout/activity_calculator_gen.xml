@@ -37,103 +37,115 @@
                 android:textSize="16dp" />
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sum"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Стоимость" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="20dp"
+                    android:text="0 тг"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/sum"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Стоимость"
-            android:layout_margin="20dp"/>
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="0 тг"
-            android:id="@+id/sum"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="20dp"/></RelativeLayout>
-        </LinearLayout>
-
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Общая площадь, кв.м."
-        android:layout_gravity="center_vertical"/>
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="20dp"
-            android:layout_height="45dp"
-            android:padding="10dp"
-            android:inputType="number"
-            android:background="@drawable/rounded_edit"/>
-</LinearLayout>
+        android:id="@+id/calc_channel"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="-20dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Количество доп. ванн"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:text="Общая площадь, кв.м." />
+
             <EditText
                 android:layout_width="fill_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="20dp"
                 android:layout_height="45dp"
-                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_edit"
                 android:inputType="number"
-                android:background="@drawable/rounded_edit"/>
+                android:padding="10dp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="-20dp"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Количество доп. ванн" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_edit"
+                android:inputType="number"
+                android:padding="10dp" />
+        </LinearLayout>
+</LinearLayout>
 
         <Button
+            android:id="@+id/next"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="70dp"
             android:layout_marginRight="70dp"
             android:background="@drawable/blue_button"
             android:text="Далее"
-            android:id="@+id/next"
             android:textColor="@color/white" />
 
 
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-       <RelativeLayout
-           android:layout_width="fill_parent"
-           android:layout_height="fill_parent">
-        <TextView
-            android:id="@+id/call"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Позвонить"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/call_color"
-            android:textSize="18dp" />
-       </RelativeLayout>
+            <TextView
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:text="Позвонить"
+                android:textColor="@color/call_color"
+                android:textSize="18dp" />
+        </RelativeLayout>
 
     </LinearLayout>
 

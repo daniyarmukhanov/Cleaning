@@ -173,8 +173,8 @@ public class CustomerContacts extends ActionBarActivity {
             try {
                 if (jsonObject.getString("result").equals("success")) {
                     SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    myPref.edit().putBoolean("authorized", true).commit();
-                    myPref.edit().putString("mail", email).commit();
+                    myPref.edit().putString("name", name).commit();
+                    myPref.edit().putString("email", email).commit();
                     myPref.edit().putString("phone", phone).commit();
                     if (!recieved.equals("")) {
                         if (recieved.equals("chemistry"))

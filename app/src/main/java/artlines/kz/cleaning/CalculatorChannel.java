@@ -104,12 +104,9 @@ public class CalculatorChannel extends ActionBarActivity {
                     }
                 }
                 SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                myPref.edit().putBoolean("authorized", true).commit();
                 myPref.edit().putString("text", sumstring).commit();
                 myPref.edit().putString("type", "Монтаж канализациооных труб").commit();
                 myPref.edit().putString("price", sum+"").commit();
-                Log.d("starterText\n", sumstring);
-
                 if(authorized){
                     startActivity(new Intent(CalculatorChannel.this, Payment.class));
                 }else

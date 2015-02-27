@@ -62,6 +62,7 @@
                     android:background="@drawable/dropdown_long"
                     android:entries="@array/cities"
                     android:padding="10dp"
+                    android:id="@+id/city"
                     android:spinnerMode="dialog" />
 
                 <TextView
@@ -76,6 +77,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:nestedScrollingEnabled="true"
+                    android:id="@+id/address"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/rounded_edit"/>
 
