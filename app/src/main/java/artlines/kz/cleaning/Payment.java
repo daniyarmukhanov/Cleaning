@@ -53,6 +53,9 @@ public class Payment extends ActionBarActivity {
                 onBackPressed();
             }
         });
+        TextView sum=(TextView)findViewById(R.id.sum);
+        SharedPreferences sharedPreferences=PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        sum.setText(sharedPreferences.getString("price","0")+" тг");
         LinearLayout cash=(LinearLayout)findViewById(R.id.cash);
         cash.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,7 +137,7 @@ public class Payment extends ActionBarActivity {
             params.add(new BasicNameValuePair("city", city));
             params.add(new BasicNameValuePair("address", address));
             params.add(new BasicNameValuePair("phone", phone));
-            //Log.e("FOR CREATE ORDER",email+"\n"+password+"\n"+api_password+"\n"+is_user+"\n"+text+"\n"+type+"\n"+price+"\n"+name+"\n"+city+"\n"+address+"\n"+phone);
+            Log.e("FOR CREATE ORDER",email+"\n"+password+"\n"+api_password+"\n"+is_user+"\n"+text+"\n"+type+"\n"+price+"\n"+name+"\n"+city+"\n"+address+"\n"+phone);
 
             jsonObject = jsonParser.makeHttpRequest(getResources().getString(R.string.url)+"order/APICreate", "POST", params);
             Log.d("Order", jsonObject.toString());

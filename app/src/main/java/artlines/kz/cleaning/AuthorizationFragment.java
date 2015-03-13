@@ -121,6 +121,7 @@ public class AuthorizationFragment extends Fragment {
                     SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
                     myPref.edit().putBoolean("authorized", true).commit();
                     myPref.edit().putString("email", email).commit();
+                    myPref.edit().putString("address", jsonObject.getString("address")).commit();
                     myPref.edit().putString("password", password).commit();
                     Toast.makeText(getActivity().getApplicationContext(), "Вы успешно авторизованы", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getActivity(), MainActivity.class));

@@ -96,7 +96,7 @@ public class CalculatorFayans extends ActionBarActivity {
                     if(editText[i].getText().toString().length()>0){
                         text[i]= (TextView) ll.getChildAt(0);
                         tempstring=text[i].getText().toString();
-                        sumstring+=tempstring+" "+editText[i].getText().toString()+"\n";
+                        sumstring+=tempstring+": "+editText[i].getText().toString()+"\n";
                     }
                 }
                 SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

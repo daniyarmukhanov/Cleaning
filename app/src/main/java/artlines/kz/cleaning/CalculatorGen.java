@@ -59,7 +59,7 @@ public class CalculatorGen extends ActionBarActivity {
         inputLayout =(LinearLayout)findViewById(R.id.calc_channel);
         editText=new EditText[inputLayout.getChildCount()];
         text=new TextView[inputLayout.getChildCount()];
-        calcConst=getResources().getIntArray(R.array.CalcMetal);
+        //calcConst=getResources().getIntArray(R.array.CalcMetal);
         for (int i=0;i<inputLayout.getChildCount();i++){
             LinearLayout ll= (LinearLayout) inputLayout.getChildAt(i);
             editText[i]=(EditText)ll.getChildAt(1);
@@ -95,7 +95,7 @@ public class CalculatorGen extends ActionBarActivity {
                     if(editText[i].getText().toString().length()>0){
                         text[i]= (TextView) ll.getChildAt(0);
                         tempstring=text[i].getText().toString();
-                        sumstring+=tempstring+" "+editText[i].getText().toString()+"\n";
+                        sumstring+=tempstring+": "+editText[i].getText().toString()+"\n";
                     }
                 }
                 SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -113,7 +113,16 @@ public class CalculatorGen extends ActionBarActivity {
             LinearLayout ll= (LinearLayout) inputLayout.getChildAt(i);
             editText[i]=(EditText)ll.getChildAt(1);
             if(editText[i].getText().toString().length()>0){
-                sum+=Integer.parseInt(editText[i].getText().toString())*calcConst[i];
+                if(i==0){
+                    if(Integer.parseInt(editText[i].getText().toString())<100)
+                    sum+=Integer.parseInt(editText[i].getText().toString())*250;
+                    else if(Integer.parseInt(editText[i].getText().toString())<=100&&Integer.parseInt(editText[i].getText().toString())<200)
+                        sum+=Integer.parseInt(editText[i].getText().toString())*230;
+                    else
+                        sum+=Integer.parseInt(editText[i].getText().toString())*200;
+                }else if(i==1){
+                    sum+=Integer.parseInt(editText[i].getText().toString())*3000;
+                }
             }
         }
         sumTV.setText(sum+" тг");

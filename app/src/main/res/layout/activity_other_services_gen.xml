@@ -55,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="0 тг"
+                    android:id="@+id/sum"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_margin="20dp"/></RelativeLayout>
@@ -113,6 +114,8 @@
                     android:layout_height="45dp"
                     android:padding="10dp"
                     android:spinnerMode="dialog"
+                    android:id="@+id/fridge"
+
                     android:entries="@array/fridge_inside"
                     android:background="@drawable/dropdown"/>
             </LinearLayout>

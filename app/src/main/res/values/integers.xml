@@ -51,6 +51,7 @@
         <item>1000</item>
         <item>1000</item>
     </integer-array>
+
     <integer-array name="chairsimple">
         <item>500</item>
         <item>500</item>
@@ -60,6 +61,14 @@
         <item>3500</item>
         <item>3500</item>
         <item>3500</item>
+    </integer-array>
+    <integer-array name="CalcOther">
+        <item>1000</item>
+        <item>1000</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>200</item>
+        <item>200</item>
     </integer-array>
     <integer-array name="kover">
         <item>850</item>

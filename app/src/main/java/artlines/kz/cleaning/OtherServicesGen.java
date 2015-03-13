@@ -12,10 +12,12 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -29,6 +31,7 @@ public class OtherServicesGen extends ActionBarActivity {
     LinearLayout inputLayout;
     TextView sumTV;
     String stringfinal;
+    Spinner fridge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +53,10 @@ public class OtherServicesGen extends ActionBarActivity {
         sumTV = (TextView) findViewById(R.id.sum);
         SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         authorized = myPref.getBoolean("authorized", false);
-        sumfinal = Integer.parseInt(myPref.getString("sum", "0"));
-        stringfinal = myPref.getString("sumstring", "");
+        sumfinal = Integer.parseInt(myPref.getString("price", "0"));
+        stringfinal = myPref.getString("text", "");
         sumTV.setText(sumfinal + " тг");
+
         ImageView back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,11 +68,23 @@ public class OtherServicesGen extends ActionBarActivity {
         inputLayout = (LinearLayout) findViewById(R.id.calc_channel);
         editText = new EditText[inputLayout.getChildCount()];
         text = new TextView[inputLayout.getChildCount()];
-        calcConst = getResources().getIntArray(R.array.CalcMetal);
+        calcConst = getResources().getIntArray(R.array.CalcOther);
         for (int i = 0; i < inputLayout.getChildCount(); i++) {
             LinearLayout ll = (LinearLayout) inputLayout.getChildAt(i);
             if (i == 1) {
-                //TODO here
+                fridge = (Spinner) findViewById(R.id.fridge);
+                fridge.setSelection(1);
+                fridge.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                   calcSum();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
             } else {
                 editText[i] = (EditText) ll.getChildAt(1);
                 text[i] = (TextView) ll.getChildAt(0);
@@ -99,13 +115,19 @@ public class OtherServicesGen extends ActionBarActivity {
                 sumstring = stringfinal;
                 for (int i = 0; i < inputLayout.getChildCount(); i++) {
                     LinearLayout ll = (LinearLayout) inputLayout.getChildAt(i);
-                    //TODO here
+
+                    if(i==1){
+                      if(fridge.getSelectedItem().toString().equals("Да"))
+                          text[i] = (TextView) ll.getChildAt(0);
+                        tempstring = text[i].getText().toString();
+                          sumstring+=tempstring + ": Да\n";
+                    }else{
                     editText[i] = (EditText) ll.getChildAt(1);
                     if (editText[i].getText().toString().length() > 0) {
                         text[i] = (TextView) ll.getChildAt(0);
                         tempstring = text[i].getText().toString();
-                        sumstring += tempstring + " " + editText[i].getText().toString() + "\n";
-                    }
+                        sumstring += tempstring + ": " + editText[i].getText().toString() + "\n";
+                    }}
                 }
                 SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 myPref.edit().putString("text", sumstring).commit();
@@ -130,12 +152,29 @@ public class OtherServicesGen extends ActionBarActivity {
         sum = sumfinal;
         for (int i = 0; i < inputLayout.getChildCount(); i++) {
             LinearLayout ll = (LinearLayout) inputLayout.getChildAt(i);
-            //TODO here
-            editText[i] = (EditText) ll.getChildAt(1);
-            if (editText[i].getText().toString().length() > 0) {
-                sum += Integer.parseInt(editText[i].getText().toString()) * calcConst[i];
+            if (i == 1) {
+
+                if (fridge.getSelectedItem().toString().equals("Да"))
+                    sum+=1000;
+            } else if (i == 2) {
+                editText[i] = (EditText) ll.getChildAt(1);
+                int t=0;
+                if(editText[i].getText().toString().length()>0)
+                    t=Integer.parseInt(editText[i].getText().toString());
+                if(t==0)
+                    sum=sum;
+                else if(t<20)
+                    sum+=3000;
+                else
+                    sum+=(t/10+2)*1000;
+            } else {
+                editText[i] = (EditText) ll.getChildAt(1);
+                if (editText[i].getText().toString().length() > 0) {
+                    sum += Integer.parseInt(editText[i].getText().toString()) * calcConst[i];
+                }
             }
         }
+
         sumTV.setText(sum + " тг");
     }
 

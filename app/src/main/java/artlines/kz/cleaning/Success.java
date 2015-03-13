@@ -1,8 +1,10 @@
 package artlines.kz.cleaning;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,6 +21,7 @@ public class Success extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success);
         getSupportActionBar().hide();
+        SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         TextView call=(TextView)findViewById(R.id.call);
         call.setPaintFlags(call.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         call.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +32,10 @@ public class Success extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+        TextView sum=(TextView)findViewById(R.id.sum);
+        sum.setText(sharedPreferences.getString("price","0")+" тг");
+        TextView address=(TextView)findViewById(R.id.address);
+        address.setText(sharedPreferences.getString("address", ""));
         Button next=(Button)findViewById(R.id.main);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
